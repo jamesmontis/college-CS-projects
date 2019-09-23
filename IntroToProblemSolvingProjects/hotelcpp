@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+ int number, mike; // variable for mike's age
+ cout << "Enter age: ";
+ cin >> number;
+ mike = number + 20;
+ cout << "In 20 years You will be: "<< mike;
+ return 0;
+}

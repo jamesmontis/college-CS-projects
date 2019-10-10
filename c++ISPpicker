@@ -1,0 +1,53 @@
+// COSC1435
+// Dr. Yadav MW 11am
+//  wk7hw
+//
+//  Created by jmontis on 10/10/19.
+//
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+    char choice;
+    int hours, extra = 0, addtl = 0;
+    float price = 0.0;
+    
+    cout << "Welcome to ISP picker" << endl;
+    cout << "Please pick an ISP Plan\n\n" << endl;
+    cout << "Plan A: $9.95/mo for 10 hrs, +$2 each additional hour\n";
+    cout << "Plan B: $14.95/mo for 20 hours, +$1 each additional hour\n";
+    cout << "Plan C: $19.95/mo for unlimited use.\n";
+    
+    cin >> choice;
+    
+	cout << "How many hours were used? Enter as (1,2,3) etc only: ";
+    cin >> hours;
+    
+    if (hours < 0 || hours > 744) { // checking valid hours used
+        cout << "error: please run the application again and enter correct hours";
+        return 0;
+    }
+    
+    if (choice == 'A') { // fixing math variables for final calc below
+            price = 9.95;
+            extra = hours - 10;
+            addtl = 2;
+	} else if (choice == 'B') {
+            price = 14.95;
+            extra = hours - 20;
+            addtl = 1;
+	} else if (choice == 'C') {
+            price = 19.95;
+            addtl = 0;
+    }
+    
+    cout << "You selected choice " << choice << "! it costs $" << price;
+    cout << " and you have gone over by " << extra << " hours.\n" << endl;
+    
+    cout << "You owe a total of $" << price + (extra * addtl) << endl;
+    
+    return 0;
+}

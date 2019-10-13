@@ -1,9 +1,4 @@
-// COSC1435
-// Dr. Yadav MW 11am
-//  wk7hw
-//
-//  Created by jmontis on 10/10/19.
-//
+// COSC 1435
 
 #include <iostream>
 using namespace std;
@@ -11,43 +6,101 @@ using namespace std;
 int main()
 
 {
+	bool valid_input = false;
     char choice;
-    int hours, extra = 0, addtl = 0;
-    float price = 0.0;
-    
+	string words;
+	int hours = 0, extra = 0, addtl = 0;
+	float price = 0.0, savings1 = 0.0, savings2 = 0.0, overmath = 0.0, planCsaved = 0.0;
+	float aSpent = 0.0, bSpent = 0.0, cSpent = 0.0;
+	
     cout << "Welcome to ISP picker" << endl;
     cout << "Please pick an ISP Plan\n\n" << endl;
     cout << "Plan A: $9.95/mo for 10 hrs, +$2 each additional hour\n";
     cout << "Plan B: $14.95/mo for 20 hours, +$1 each additional hour\n";
     cout << "Plan C: $19.95/mo for unlimited use.\n";
-    
-    cin >> choice;
-    
-	cout << "How many hours were used? Enter as (1,2,3) etc only: ";
-    cin >> hours;
-    
-    if (hours < 0 || hours > 744) { // checking valid hours used
-        cout << "error: please run the application again and enter correct hours";
-        return 0;
-    }
-    
-    if (choice == 'A') { // fixing math variables for final calc below
-            price = 9.95;
-            extra = hours - 10;
-            addtl = 2;
+	
+	// getting plan choice from user
+	
+	do
+	{
+		cout << "\nPlease select plan A,B, or C\n" << endl;
+		cin >> choice;
+	} while (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'a' && choice != 'b' && choice != 'c');
+		
+	// checking if valid # of hours entered
+
+	do
+	{
+		cout << "\n\nPlease enter a real amount of hours used\n" << endl;
+		cin >> hours;
+		if (isdigit(hours)) {
+			valid_input = true; // using boolean to stop while loop
+		}
+	} while ((hours < 0) || (hours > 744) || (valid_input=false));
+	
+	cout << "Good work, you used " << hours << " hours.\n" << endl;
+	
+	// inputs have been validated (maybe)
+	
+	choice = toupper(choice); // make the choice uppercase
+	
+	switch (choice)
+	{
+		case 'A':
+			price = 9.95;
+			extra = hours - 10;
+			if (extra < 0) {
+					extra = 0;
+			}
+			addtl = 2;
+			break;
+		case 'B':
+			price = 14.95;
+			extra = hours - 20;
+			if (extra < 0) {
+				extra = 0;
+			}
+			addtl = 1;
+			cout << "On plan C you would have saved" << planCsaved << endl;
+			break;
+		case 'C':
+			price = 19.95;
+			addtl = 0;
+		default: cin >> choice;
+	}
+	
+	overmath = price + (extra * addtl);  // math to see overage costs
+	aSpent = (9.95 + (extra * 2));
+	bSpent = (14.95 +(extra * 1));
+	cSpent = 19.95;
+
+	// see if they had savings or not
+	
+	if (choice == 'A' && aSpent > 9.95) {
+		savings1 = (aSpent - bSpent);
+		savings2 = (aSpent - cSpent);
+		if (savings1 > 0) {
+			cout << "You would have saved $" << savings1 << " on plan B.\n";
+			cout << "You would have saved $" << savings2 << " on plan C.\n";
+		}
+	}
+		else if (choice == 'B' && price >= 14.95) {
+			savings1 = (bSpent - cSpent);
+			if (savings1 > 0) {
+				cout << "You would have saved $" << savings1 << " on plan B.\n";
+				cout << "You would have saved $" << savings2 << " on plan C.\n";
+		}
+	}
+	
+	cout << "You selected choice " << choice << ".\n" << "! it costs $" << price << ".\n";
+	
+	if (choice == 'A') {
+		
+		cout << " and you have gone over by " << extra << " hours.\n" << endl;
 	} else if (choice == 'B') {
-            price = 14.95;
-            extra = hours - 20;
-            addtl = 1;
-	} else if (choice == 'C') {
-            price = 19.95;
-            addtl = 0;
-    }
-    
-    cout << "You selected choice " << choice << "! it costs $" << price;
-    cout << " and you have gone over by " << extra << " hours.\n" << endl;
-    
-    cout << "You owe a total of $" << price + (extra * addtl) << endl;
+		cout << " and you have gone over by " << extra << " hours.\n" << endl;
+	}
+    cout << "You owe a total of $" << overmath << "\n\n" << endl;
     
     return 0;
 }

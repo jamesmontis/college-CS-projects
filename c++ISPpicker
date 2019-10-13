@@ -7,7 +7,7 @@ int main()
 
 {
 	bool valid_input = false;
-    char choice;
+   	char choice;
 	string words;
 	int hours = 0, extra = 0, addtl = 0;
 	float price = 0.0, savings1 = 0.0, savings2 = 0.0, overmath = 0.0, planCsaved = 0.0;

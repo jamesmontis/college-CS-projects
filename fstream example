@@ -1,0 +1,24 @@
+// this code takes 3 inputs, averages them and prints it to a text.file
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+ int num1, num2, num3, sum=0;
+ double average;
+ ofstream outFile; //define output file stream object
+ outFile.open("numbers.txt"); //create file “numbers.txt”
+ cout << "Enter three integers: \n";
+ cin >> num1 >> num2 >> num3; //Get numbers from the user
+
+ sum = num1+num2+num3;
+ average = sum/3.0;
+
+ outFile << "The sum is " << sum << endl; //write to file
+ outFile << "The average is " << average << endl; //write to file
+
+ cout << "Done writing sum and average to file numbers.txt"<<endl;
+ outFile.close(); //close the file
+ return 0;
+}

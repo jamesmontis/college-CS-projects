@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+   string texts[] = {"Apple", "Banana", "Orange", ""};
+   for( unsigned int a = 0; texts[a].length(); a = a + 1 )
+   {
+       cout << "value of a: " << texts[a] << endl;
+   }
+
+   return 0;
+}

@@ -1,0 +1,49 @@
+// https://www.youtube.com/watch?v=0_MPtg2eQEc
+// Silvain Saurel wrote the javascript and json stuff
+// i added the css formatting and other formats
+
+<html>
+<head>
+<meta http-equiv="refresh" content="10">
+<meta charset="utf-8">
+<title>₿itcoin</title>
+<style type="text/css">
+
+  #data {
+    width: 100%;
+    border: 1px dashed black;
+    font-size: 30px;
+	font-family: "Lucida Console", Monaco, monospace;
+	color: yellow;
+	background: black;
+    text-align: center;
+    padding: 10px;
+    window.focus();
+  }
+</style>
+</head>
+<body>
+
+  <div id="data" />
+  <script type="text/javascript">
+	window.resizeTo(200,100);
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4  &&  this.status == 200) {
+        var json = JSON.parse(this.responseText);
+        parseJson(json);
+      }		
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function parseJson(json) {
+      var usdValue = "₿TC $" + json["bpi"]["USD"]["rate"];
+      document.getElementById("data").innerHTML =usdValue;
+}
+</script>
+</body>
+</html>

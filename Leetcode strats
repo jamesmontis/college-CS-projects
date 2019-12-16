@@ -1,0 +1,42 @@
+My leetcode study guide
+I interviewed at Google, FB, Microsoft, Uber and was never tested on a concept that I have not seen before.
+
+Step 0 - You know how to code. (You can solve some Leetcode Easy Questions)
+Credits: u/keanwood
+
+Prereqs: You are comfortable with programming in general, and you can flesh out your thoughts via code. Go to codewars.com and do a few of their easiest problems (lv8 and lv7)
+
+If you can't solve any Leetcode easy just keep revising easy questions. Easy questions do not require any algorithms except linear traversals and the likes.
+Step 1 - Algo MOOC or book
+This is what I used: https://runestone.academy/runestone/books/published/pythonds/index.html
+
+or this if you have time (avoid network flows): https://www.coursera.org/learn/algorithms-part1 https://www.coursera.org/learn/algorithms-part2
+
+Just get to solving the actual questions as soon as you can. MOOC take a lot of time to complete and If you know the basic data structures and traversals, start step-2. If you do not know how to solve it (Which will be the case), look it up and upsolve.
+
+I already knew my way around basic data structures and traversals so I stared from step 2.
+
+For me BFS/DFS is basic while Dijkstra's is not.
+
+Step 2 - Coderust
+https://www.educative.io/courses/coderust-hacking-the-coding-interview
+
+Search the questions on leetcode. I was not able to do most of them so please look at the answer and upsolve. This will give you a great base to solve other similar questions.
+
+This should be enough for Tier 2 companies.
+FAANG/BIG N
+Step 3 - Teamblind List
+https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
+
+In leetcode list format: https://leetcode.com/list/xoqag3yj/
+Step 4 - A week before the interview
+Company specific leetcode explore questions
+Company tagged leetcode discuss
+
+The hardest part for me was to come up with a proper plan as there are just so many questions and it's easy to get lost. Also please look at the solution if you can't solve it in 30 mins.
+
+Followed this for 3 months and received internship offers from FB, Uber and Microsoft. Hope this helps you as well.
+
+Good luck!
+
+EDIT: Added a more descriptive step 0

@@ -1,0 +1,10 @@
+int seqSearch(a, size, key)
+  int position = -1;
+  int index = 0;
+  while (a[index]== key){
+    if(a[index]=key){
+         position = index;
+    }
+    index++;
+   }
+  return position

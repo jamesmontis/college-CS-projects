@@ -1,0 +1,21 @@
+int selectionSort(a, size)
+  int i=0;
+  while (i<size){
+    unsortedMin=findMin(a,size,i)
+    swap(a,i,unsortedMin);
+    i++;
+  }
+  
+ findMin(a,size,i)
+    smallest=i;
+    j=i+1;
+    while(j<size)
+        if(a[j]<a[smallest])
+          smallest=j;
+        j++;
+  return smallest;
+  
+  function swap(a,x,y)
+      temp=a[x];
+      a[x]=a[y];
+      a[y]=temp
